@@ -1,13 +1,13 @@
 {% set name = "tsml-eval" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tsml-eval-{{ version }}.tar.gz
-  sha256: a92287d4c5ea8647e4bf976fc661323a54b7526d24b4581c26db44f8d119e6e8
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 3d582451dad3ea9fad80dfabb53b18cebc5f964ef32d5fceec487706d7a62296
 
 build:
   noarch: python
