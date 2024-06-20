@@ -1,5 +1,5 @@
 {% set name = "tsml-eval" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 5320f7d87d438a22ab13054d646902500b73b8c0da867854ee83e7772e5abb88
+  sha256: 96377e825144e2d7a6d7a0c5330797543b452ff6c650249b53b8145f3b83fb0e
 
 build:
   noarch: python
@@ -16,17 +16,17 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<3.13
+    - python >=3.9,<3.13
     - setuptools >=61
     - wheel
     - toml
     - python-build
     - pip
   run:
-    - python >=3.8,<3.13
-    - aeon >=0.8.0,<0.9.0
+    - python >=3.9,<3.13
+    - aeon >=0.9.0,<0.10.0
     - tsml >=0.4.0,<0.5.0
-    - scikit-learn >=1.0.0,<=1.5.0
+    - scikit-learn >=1.0.0,<=1.6.0
     - matplotlib-base
     - gpustat
     - psutil
