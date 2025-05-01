@@ -9,8 +9,6 @@ Package license: BSD-3-Clause
 
 Summary: A package for benchmarking time series machine learning tools.
 
-Development: https://github.com/time-series-machine-learning/
-
 Current build status
 ====================
 
