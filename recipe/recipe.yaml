@@ -2,7 +2,8 @@ schema_version: 1
 
 context:
   name: tsml-eval
-  version: 0.6.0
+  version: "0.7.0"
+  python_min: "3.12"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace("-","_") }}-${{ version }}.tar.gz
-  sha256: f330a147c6a272b52aacdf3fe4c651681a3d0e5808cce3e93b3d0840db3c92b5
+  sha256: 0b8c7adf288921fbab99ad98faeb21a8f8c3404e60b3e373b2572b74703dad3d
 
 build:
   number: 0
@@ -26,10 +27,9 @@ requirements:
     - python-build
     - pip
   run:
-    - python >=${{ python_min }}
-    - aeon >=1.0.0,<1.2.0
-    - tsml >=0.6.0,<0.8.0
-    - scikit-learn >=1.0.0,<=1.7.0
+    - python >=${{ python_min }},<3.15
+    - aeon >=1.0.0,<1.6.0
+    - scikit-learn >=1.4.0,<1.10.0
     - matplotlib-base
     - seaborn
     - gpustat
@@ -40,7 +40,9 @@ tests:
       imports:
         - tsml_eval
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: A package for benchmarking time series machine learning tools.
